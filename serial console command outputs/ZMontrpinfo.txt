@@ -1,0 +1,24 @@
+ZMon>trpinfo
+Transport Port Configuration
+Transport Port Configuration
+TU_SerialIn Mode
+  Stream Type:  Unknown Stream Type
+  Direction:    INPUT
+  SynchronizationType: Unknown synchType
+Transport Port Configuration
+TU_ParallelIn Mode
+  Stream Type:  Unknown Stream Type
+  Direction:    INPUT
+  SynchronizationType: Unknown synchType
+Transport Port Configuration
+TU_1394In Mode
+  Stream Type:  Unknown Stream Type
+  Direction:    INPUT
+  SynchronizationType: Unknown synchType
+Transport Port Configuration
+TU_ParallelOut Mode
+  Stream Type:  Unknown Stream Type
+  Direction:    INPUT
+  SynchronizationType: Unknown synchType
+Transport Unit Connections
+  Source: Unknown Transport unit type  Destination: TU_TSD0

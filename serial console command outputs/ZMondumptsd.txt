@@ -1,0 +1,71 @@
+ZMon>help dumptsd
+- symbolic dump of Transport Stream Demultiplexer
+   microcode data
+ZMon>dumptsd
+Begin TSD dump
+  TSDActive = 0x00008000
+    TSD enabled
+    collision interrupt disabled
+  Packet count = 294
+  Interrupt mask = 0x0C7F
+  Deliberate error interval = 0, Deliberate error count = 0
+  Stream Capture Control = 0x0000
+    Capture_Full=FALSE Write DMA Use Match=FALSE
+  AuxDMAIndex=0
+  Demux Control = 0x0004
+    Ignore_Cont_Ctr=FALSE Ignore_PCR=FALSE Auto_Ignore_PCR=TRUE
+  Last PCR PID=0x0000 PCR=0x0000 0000 0000 STC=0000 0000 0000 PacketCount=0
+  STC Alarm = 0x05E6 BF97 FE00
+  Last 16 queued interrupts = 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0170 0070 0170 0170
+  Packet 1 =
+    47 EC FF 0C C5 3D E0 6E AC 68 68 A1 41 04 6B 8F 6C 0A 73 18
+    29 05 AF BA 33 D8 10 3D 66 80 E7 A7 5E AD 3A 09 98 A9 43 C3
+    77 26 84 89 B0 FA AE A3 AF 4F 58 0C C9 2A 27 7A E2 20 06 38
+    4D 43 7A 92 CA D8 F9 D5 18 F4 FC 8B 5D 2E 67 96 DE 1A 6A 9B
+    82 6B 79 FE 38 6F 58 6B 07 83 33 D3 52 8C 17 A9 58 D8 6A 6D
+    D1 E8 E4 93 2C 03 47 56 08 37 8E CA 05 F4 9D 8A 5C 93 64 8F
+    94 1B B6 E3 6C 41 4C 38 AB 6B 49 5A C7 B0 EE 69 F6 29 21 E3
+    3B 41 2B D3 92 BA 8E AE 8A 63 FC B0 5D 56 A5 3E 81 2B D6 70
+    A5 25 1C 08 2E 69 93 D8 75 0A 91 81 24 5B B9 C7 75 C9 5D 7B
+    0A C8 14 4F 0F 00 E8 7F
+  Packet 2 =
+    47 F6 E0 C4 60 C8 3B 12 B0 8E 14 7F FD 6D 03 DB 6F 28 5E 0C
+    27 DD 5C B6 E8 B4 E1 E4 D0 F8 91 EB 7E 34 91 2D CD EB 2B C6
+    77 D7 DA F5 6C 55 DB AF 89 D6 61 65 AD BC 4D 81 44 DF A5 C8
+    EC B5 70 DA 54 89 14 F9 83 98 89 C3 AE 47 4B 4A 8D C2 A3 77
+    E3 BE FA 32 44 43 1C 36 2F 55 14 9C 55 7C 1E F3 77 18 96 DD
+    52 DE 5F 97 0C E2 CB D3 6D E0 45 C0 AD 94 76 6A F2 6E BA F3
+    9C 97 95 E2 81 32 EB B5 14 03 80 96 CD 3E AB 2F FC F2 38 DC
+    4F 50 DB 21 82 B0 F1 0A 02 21 0F 58 2B 73 63 1B 95 1F DE FC
+    D4 6A 3D CB 35 5B 58 B5 D0 53 99 9E 3E 2D 0D 30 BF 28 A0 62
+    42 E9 85 49 58 E3 84 09
+  Packet 3 =
+    47 F2 11 90 57 C8 FC 2D 1F F8 F1 49 E3 3A 2E E2 6C BF 3B 9D
+    0A 18 65 89 82 81 C2 E9 59 F6 2E F8 66 FD FF E3 32 BD E1 46
+    5C B5 B4 EF FC C2 7E 50 8D 8A 13 57 B2 F8 18 D6 E6 FD F2 B6
+    5B 22 D8 C7 47 EE CE C6 32 4A 7C 9E 4D 66 0A AC CF 11 58 AA
+    6D F7 E9 C0 D7 EF 74 C6 7A 7F E0 79 90 CD CE 2C 61 CD BB 9A
+    25 79 4F 6D 72 F2 5F 97 03 16 5E AB 6B 79 0E E1 BB 96 45 C1
+    B2 07 A8 3A CC 8A 2C 53 7D 5A F9 F7 33 2A 86 8B 17 72 9F CD
+    04 47 49 C3 67 D2 E6 B9 D3 9A A3 EF A4 6D 46 DC 32 72 A2 19
+    46 77 FE 53 EB 9C 37 C3 78 96 2B 6A 1E 6B 86 96 2D 87 80 60
+    A1 5F 85 1B FF A6 1D C4
+  DOB Table
+    DOB #0: PID = 8187 = 0x1FFB Demux=ON
+      ShortCounter=0 (Discontinuity WaitPUSI ) ContinuityCounter=0 Filter Enabled Filter Message:  00000000
+ PUSI Counter=0
+      mode=0x8000=FV_PARSE_SECTIONS AuxDMAIndex=0
+      DisablePCR=FALSE MatchPtr=FALSE NoPTSPES=FALSE EMMFilter PrefilterIndex = 0
+      Prefilter 0:
+        Status: FailMatch=FALSE SuccNoMatch=FALSE NoMatchUsed=FALSE OneShot=FALSE
+        Control: size=4 OneShot=FALSE EndLink=TRUE
+            Offsets  0  3  4  5| 6  7  8  9 10 11 12 13
+             values D8 00 00 01|00 00 00 00 00 00 00 00
+          matchMask FF 00 00 01|00 00 00 00 00 00 00 00
+        noMatchMask 00 00 00 00|00 00 00 00 00 00 00 00
+        End of prefilter chain
+    Main DMA:  addr=0x01337000(cpu=0xA1337000) nextAddr=0x01337000(cpu=0xA1337000)
+           backAddr=0x01337000(cpu=0xA1337000)  endAddr=0x0133D000(cpu=0xA133D000)
+
+    DOBs #1-31: unused
+

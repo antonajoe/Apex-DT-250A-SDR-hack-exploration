@@ -1,0 +1,14 @@
+ZMon>sdfCache_Dumpmempool
+pool: curp=0x818C5D40, pool=0x8185A000
+      poolSize=524288(bytes), totalCells=65536, usedCells=10630
+  p=0x818C5F78, p->cellNum=   84, p+p->cellNum=0x818C6218, p->pNext=0x818C6908
+  p=0x818C6908, p->cellNum=   13, p+p->cellNum=0x818C6970, p->pNext=0x818C6A00
+  p=0x818C6A00, p->cellNum=   96, p+p->cellNum=0x818C6D00, p->pNext=0x818C7158
+  p=0x818C7158, p->cellNum=    2, p+p->cellNum=0x818C7168, p->pNext=0x818C7FC0
+  p=0x818C7FC0, p->cellNum=    2, p+p->cellNum=0x818C7FD0, p->pNext=0x818C7FF0
+  p=0x818C7FF0, p->cellNum=    2, p+p->cellNum=0x818C8000, p->pNext=0x818D1E18
+  p=0x818D1E18, p->cellNum=    2, p+p->cellNum=0x818D1E28, p->pNext=0x818D1E48
+  p=0x818D1E48, p->cellNum=    2, p+p->cellNum=0x818D1E58, p->pNext=0x8183A46C
+  p=0x8183A46C, p->cellNum=    0, p+p->cellNum=0x8183A46C, p->pNext=0x8185A000
+  p=0x8185A000, p->cellNum=54650, p+p->cellNum=0x818C4BD0, p->pNext=0x818C5D40
+  p=0x818C5D40, p->cellNum=   53, p+p->cellNum=0x818C5EE8, p->pNext=0x818C5F78

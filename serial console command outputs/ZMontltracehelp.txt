@@ -1,0 +1,37 @@
+ZMon>tltracehelp
+Usage: tltrace <modules> <priorities> <nestinglevel> {time} {task}
+  <modules> is the OR of the following mask bits:
+    Mask       Name
+    0x00000001 Display
+    0x00000002 Video
+    0x00000004 Transport
+    0x00000008 ARIB Topology (Not used)
+    0x00000010 Audio
+    0x00000020 Graphics
+    0x00000040 Video Control Task
+    0x00000080 BLT
+    0x00000100 Base Services
+    0x00000200 Utils
+    0x00000400 ARIB Verifier (Not used)
+    0x00000800 SI/PSIP
+    0x00001000 CHMap
+    0x00002000 CtrlArray
+    0x00004000 GPIO
+    0x00008000 I2C
+    0x00010000 IR
+    0x00020000 Power (Not used)
+    0x00040000 SPI (Not used)
+    0x00080000 Timer (Not used)
+    0x00100000 Video User Proc
+  <priorities> is the OR of the following mask bits.
+    Mask Priority
+    0x01 Priority 1 - Important, Rarely used calls
+    0x02 Priority 2 - Less important, internal calls
+    0x04 Priority 3 - Commonly used calls
+    0x08 Priority 4 - Very commonly used calls
+  <nestinglevel> is the maximum nesting level to trace or -1 for all nesting levels
+  {time} is the time in seconds to trace, or 0 for no time limit
+  {task} is the task name to trace, or leave blank for all tasks
+tltrace       - with no parameters disable tracing
+tltracehelp   - This message
+tltracestatus - display trace status

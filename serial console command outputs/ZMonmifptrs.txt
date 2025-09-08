@@ -1,0 +1,35 @@
+ZMon>help mifptrs
+- display video Memory InterFace pointer information
+ZMon>mifptrs
+0  MCEWr    0xA0000000 4:2:0 w=   0 h=   0
+1  MCEWr    0xA0000000 4:2:0 w=   0 h=   0
+2  MCERdFwd 0xA0000000 4:2:0 w=   0 h=   0
+3  MCERdFwd 0xA0000000 4:2:0 w=   0 h=   0
+4  MCERdBwd 0xA0000000 4:2:0 w=   0 h=   0
+5  MCERdBwd 0xA0000000 4:2:0 w=   0 h=   0
+6  VDR_R    0xA0000000 4:2:0 w=   0 h=   0
+7  VDR_R    0xA0000000 4:2:0 w=   0 h=   0
+8  DPC1     0xA0000000 4:2:0 w=   0 h=   0
+9  DPC1     0xA0000000 4:2:0 w=   0 h=   0
+10 DPC2     0xA0000000 4:2:0 w=   0 h=   0
+11 DPC2     0xA0000000 4:2:0 w=   0 h=   0
+12 AUX_1    0xA0000000 4:2:0 w=   0 h=   0
+13 AUX_1    0xA0000000 4:2:0 w=   0 h=   0
+14 HDC_1    0xA0000000 4:2:0 w=   0 h=   0
+15 HDC_1    0xA0000000 4:2:0 w=   0 h=   0
+16 HDC_1    0xA0000000 4:2:0 w=   0 h=   0
+17 HDC_1    0xA0000000 4:2:0 w=   0 h=   0
+18 HDC_1    0xA0000000 4:2:0 w=   0 h=   0
+19 HDC_1    0xA0000000 4:2:0 w=   0 h=   0
+20 HDC_1    0xA0000000 4:2:0 w=   0 h=   0
+21 HDC_1    0xA0000000 4:2:0 w=   0 h=   0
+22 HDC_1    0xA0000000 4:2:0 w=   0 h=   0
+23 HDC_1    0xA0000000 4:2:0 w=   0 h=   0
+24 VSRd1    0xA0000000 4:2:0 w=   0 h=   0
+25 VSRd1    0xA0000000 4:2:0 w=   0 h=   0
+26 VSRd2    0xA0000000 4:2:0 w=   0 h=   0
+27 VSRd2    0xA0000000 4:2:0 w=   0 h=   0
+28 VSWb1    0xA0000000 4:2:0 w=   0 h=   0
+29 VSWb1    0xA0000000 4:2:0 w=   0 h=   0
+30 Aux scaler writeback 1    0xA0000000 4:2:0 w=   0 h=   0
+31 Aux scaler writeback 1    0xA0000000 4:2:0 w=   0 h=   0

@@ -1,0 +1,571 @@
+ZMon>sems
+Semaphore Name      : printfSema5
+Semaphore ID        : 0x81E3DCC8
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : ISRWaitKill
+Semaphore ID        : 0x81E3DE30
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : watchdogSema4
+Semaphore ID        : 0x81E3DF50
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 1
+Suspended List:
+   0x81B46EE0 F8:WatchDog
+
+Semaphore Name      : TSCTExec
+Semaphore ID        : 0x81E3E028
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : STCTim0
+Semaphore ID        : 0x81E3E258
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : STCTim1
+Semaphore ID        : 0x81E3E2A0
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 1
+Suspended List:
+   0x81B8DC90 F0:Timer90000_TxStartup
+
+Semaphore Name      : STCTim2
+Semaphore ID        : 0x81E3E2E8
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 1
+Suspended List:
+   0x81B62990 F0:Timer5400000_TxStartup
+
+Semaphore Name      : STCTim3
+Semaphore ID        : 0x81E3E330
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 1
+Suspended List:
+   0x81B48270 F0:Timer90000_TxStartup
+
+Semaphore Name      : TSD_STC_ALARM_CLOCK_VEC
+Semaphore ID        : 0x81E3E408
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 1
+Suspended List:
+   0x81B478A8 F8:STCTimer
+
+Semaphore Name      : BLT Semaphore
+Semaphore ID        : 0x81E3E4E0
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : BLT Task Semaphore
+Semaphore ID        : 0x81E3E528
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : BM2M Task Semaphore
+Semaphore ID        : 0x81E3E5B8
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : BM2M Semaphore
+Semaphore ID        : 0x81E3E600
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : DLSyncSema4
+Semaphore ID        : 0x81E3E6D8
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : TopVBISema4
+Semaphore ID        : 0x81E3E720
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : BottomVBISema4
+Semaphore ID        : 0x81E3E768
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : FieldVBISema4
+Semaphore ID        : 0x81E3E7B0
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : DPCRegWaitSema4
+Semaphore ID        : 0x81E3E7F8
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : dpcGenGlkSema4
+Semaphore ID        : 0x81E3E840
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 1
+Suspended List:
+   0x81B539B8 CE:DPCGenCLK
+
+Semaphore Name      : MCE_SYNC_DONE_VEC
+Semaphore ID        : 0x81E3E918
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : ShExSem2@0x81E3E9A8 VideoContext
+Semaphore ID        : 0x81E3EAB8
+Semaphore Type      : Counting
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : ShExSem4@0x81E3E9A8 VideoContext
+Semaphore ID        : 0x81E3EBC8
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : A52 PostMsg Critical section
+Semaphore ID        : 0x81E3EE00
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : A52 PostMsg Response
+Semaphore ID        : 0x81E3EE88
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : tAPU_cmd_mutex
+Semaphore ID        : 0x81E3F098
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : tAPU_resp_sem
+Semaphore ID        : 0x81E3F0E0
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : CCAPISyncSema4
+Semaphore ID        : 0x81E43988
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : CCGraphicsCtrlKillSema4
+Semaphore ID        : 0x81E439D0
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : semaAudio
+Semaphore ID        : 0x81E43AE0
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : AUM_mutex_sem
+Semaphore ID        : 0x81E43FB8
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : decoder mutex sema4
+Semaphore ID        : 0x81E44968
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : ShExSem2@0x81E44A40 sidbRWSema4
+Semaphore ID        : 0x81E44B50
+Semaphore Type      : Counting
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : ShExSem4@0x81E44A40 sidbRWSema4
+Semaphore ID        : 0x81E44C60
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : capKillSem
+Semaphore ID        : 0x81E46F88
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : capSyncSem
+Semaphore ID        : 0x81E46FD0
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : expKillSem
+Semaphore ID        : 0x81E47018
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : expSyncSem
+Semaphore ID        : 0x81E47060
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : chCancelSem
+Semaphore ID        : 0x81E470A8
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : i2cIRQ2
+Semaphore ID        : 0x81E47180
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : KbdMutex
+Semaphore ID        : 0x81E471C8
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : KbdWait4Char
+Semaphore ID        : 0x81E47210
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 1
+Suspended List:
+   0x81945D80 60:tDemoRemote
+
+Semaphore Name      : IRRSema4
+Semaphore ID        : 0x81E47258
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : mainOSDsema
+Semaphore ID        : 0x81E474E0
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : easKillSema4
+Semaphore ID        : 0x81E49AB8
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : dobKSm0 81B44F24
+Semaphore ID        : 0x81E49C68
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : dobPSm0 81B44F24
+Semaphore ID        : 0x81E49CB0
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : dobIFSm0 81B44F24
+Semaphore ID        : 0x81E4A178
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : dobDFSm0 81B44F24
+Semaphore ID        : 0x81E4A1C0
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : EPG Semaphore
+Semaphore ID        : 0x81E4AC60
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : EPG Time Sema4
+Semaphore ID        : 0x81E4ACA8
+Semaphore Type      : Binary
+Semaphore Count     : 1
+Suspended Tasks     : 0
+
+Semaphore Name      : feDSPInterruptSema4
+Semaphore ID        : 0x81E4B018
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 1
+Suspended List:
+   0x81B9D2E0 10:FEInterrupt
+
+Semaphore Name      : tVideoControl respSema4
+Semaphore ID        : 0x81E4B338
+Semaphore Type      : Binary
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : STCTim4
+Semaphore ID        : 0x81E3E190
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : STCTim5
+Semaphore ID        : 0x81E3E1D8
+Semaphore Type      : Counting
+Semaphore Count     : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : printfSema4
+Semaphore ID        : 0x81E3DC80
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : MemSema4
+Semaphore ID        : 0x81E3DDA0
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : ISRMutexKill
+Semaphore ID        : 0x81E3DE78
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : TSCTWrite
+Semaphore ID        : 0x81E3DFE0
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : TSD[0] devAllocate
+Semaphore ID        : 0x81E3E070
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : TS0dmaAllocate
+Semaphore ID        : 0x81E3E0B8
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : TS0CapSema
+Semaphore ID        : 0x81E3E100
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : prefAllocate
+Semaphore ID        : 0x81E3E148
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : STCTimCS
+Semaphore ID        : 0x81E3E378
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : stcSema4
+Semaphore ID        : 0x81E3E3C0
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : DispSema4
+Semaphore ID        : 0x81E3E690
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : OverrideBCSema4
+Semaphore ID        : 0x81E3E888
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : ShExSem1@0x81E3E9A8 VideoContext
+Semaphore ID        : 0x81E3EA30
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : ShExSem3@0x81E3E9A8 VideoContext
+Semaphore ID        : 0x81E3EB40
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : GDL Semaphore
+Semaphore ID        : 0x81E3F3F8
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : fontSema4
+Semaphore ID        : 0x81E3F440
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : sdfCacheSema4
+Semaphore ID        : 0x81E3F488
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : CtrlArrSem
+Semaphore ID        : 0x81E3F680
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : sTunerAPI
+Semaphore ID        : 0x81E401E0
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : multiChMapProtectSema4
+Semaphore ID        : 0x81E40468
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : ccDecodeSema4
+Semaphore ID        : 0x81E43428
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : xdsSema4
+Semaphore ID        : 0x81E436B8
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : masterSema4
+Semaphore ID        : 0x81E43700
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : fontClientSema4
+Semaphore ID        : 0x81E43748
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : CCApiMutexSema4
+Semaphore ID        : 0x81E43940
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : ShExSem1@0x81E44A40 sidbRWSema4
+Semaphore ID        : 0x81E44AC8
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : ShExSem3@0x81E44A40 sidbRWSema4
+Semaphore ID        : 0x81E44BD8
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : i2c2
+Semaphore ID        : 0x81E47138
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : fontClientSema4
+Semaphore ID        : 0x81E47528
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : dobSm0 81B44F24
+Semaphore ID        : 0x81E49BD8
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : PCRLkSm0 81B44F24
+Semaphore ID        : 0x81E49C20
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : logoOSD
+Semaphore ID        : 0x81E4AF88
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0
+
+Semaphore Name      : rrt5Mutex
+Semaphore ID        : 0x81E4AFD0
+Semaphore Type      : Mutex
+Semaphore Owner     : (none)
+Semaphore Own Count : 0
+Suspended Tasks     : 0

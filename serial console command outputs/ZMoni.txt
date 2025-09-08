@@ -1,0 +1,37 @@
+ZMon>i
+Name                       Task ID    Prio Stack Use State
+-------------------------- ---------- ---- --------- --------------------
+System Timer Thread        0x817C82C8 0xF8  240/1024 Suspended
+TxTerminate                0x81B3DAA0 0xF8  132/2048 Queue(OS_TerminateQ)
+TxException                0x81B3E468 0xF8  132/2048 Queue(ExceptionQ)
+STCTimer                   0x81B478A8 0xF8  200/2048 Counting Sem(TSD_STC_ALARM_CLOCK_VEC)
+WatchDog                   0x81B46EE0 0xF8  252/2048 Counting Sem(watchdogSema4)
+IdleLEDHigh                0x81B42B88 0xF8  152/4096 Sleep(30)
+Timer90000_TxStartup       0x81B8DC90 0xF0  208/2048 Counting Sem(STCTim1)
+Timer5400000_TxStartup     0x81B62990 0xF0  172/2048 Counting Sem(STCTim2)
+Timer90000_TxStartup       0x81B48270 0xF0  236/2048 Counting Sem(STCTim3)
+Video                      0x81B4A380 0xE8 2144/8192 Queue(videoTaskMsgQ)
+DPCGenCLK                  0x81B539B8 0xC8  484/4096 Binary Sem(dpcGenGlkSema4)
+TSD400                     0x81B90D68 0xC0  140/8192 Queue(dobQ0 81B44F24)
+APU                        0x81B4CCD0 0xB0  324/4096 Queue(APU_msg_q)
+tA52                       0x81855E38 0xA8  208/16384 Queue(A52 message Queue)
+AudPES_0                   0x81B5E360 0xA8  164/4096 Queue(tATsd_msg_q)
+dpcWATCHDOG                0x81B517F0 0xA0  252/8192 Queue(dpcWatchDogTaskMsgQ,18)
+tEasTask                   0x81B8EBA0 0xA0  132/8192 Queue(easMsgQ)
+tVideoControl              0x8184DAA8 0x90 2732/16384 Binary Sem(FieldVBISema4)
+tCCDecoder                 0x81B5C198 0x88  220/8192 Queue(CCDecMsgQ,3)
+tCCGfxControlTask          0x818E69D8 0x78  156/16384 Queue(CCMsgQ)
+tCCGraphics                0x81B59FD0 0x70  268/8192 Queue(displayQ,15)
+DispNoSigLogo              0x81B9AF50 0x70  284/4096 Queue(tvLogoMsgQ)
+tSiDbExpiryTask            0x81B617C8 0x70  172/4096 Queue(expMsgQ)
+tSiDbCaptureTask           0x8193E9F0 0x68  156/12288 Queue(capMsgQ)
+tDemoRemote                0x81945D80 0x60  204/16384 Binary Sem(KbdWait4Char)
+tIRTask                    0x81941BB8 0x58  132/16384 Queue(IRMsgQ)
+Frontpanel                 0x81B63398 0x10  244/4096 Ready
+ZMon                       0x81B4F6A0 0x10 2332/4096 Running
+FEInterrupt                0x81B9D2E0 0x10  132/4096 Binary Sem(feDSPInterruptSema4)
+tTunerAPI                  0x81B54B80 0x08  156/4096 Queue(qTunerAPI)
+tTVMiscService             0x81851C70 0x08 1660/16384 Queue(TimeoutQ,120)
+SignalMonitor              0x81B9C118 0x08  508/4096 Sleep(2)
+tPrintf                    0x81B40FF8 0x08 1300/4096 Ready
+tIdleLEDLow                0x81B43D50 0x00  188/4096 Ready

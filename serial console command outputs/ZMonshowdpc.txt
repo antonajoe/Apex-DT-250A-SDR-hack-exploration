@@ -1,0 +1,32 @@
+ZMon>showdpc
+//////// DPC EOF Interrupt Counts ////////
+dpcEOF0ISRCnt = 26193
+dpcEOF1ISRCnt = 26192
+dpcGenClkISRCnt = 52385, (52385)
+//////// Timing Information ////////
+Timing: 720 X 484 I @ 29.970030
+        Pixel Clock = 13.500000 Mhz
+        H Sync. Pulse = 64
+        HBP = 58
+        HFP = 16
+        V Sync. Pulse0 = 3
+        VBP0 = 14
+        VFP0 = 3
+        V Sync. Pulse1 = 3
+        VBP1 = 14
+        VFP1 = 4
+        Left   Border = 0
+        Right  Border = 0
+        Top    Border = 0
+        Bottom Border = 0
+        Horizontal Shift= 0
+        Vertical Shift  = 0
+//////// Picture Quality Units ////////
+HWG unit fir_bypass is ON
+HWG unit intr_bypass is ON
+EE unit is ON!
+SCC unit is OFF!
+TLUT unit is OFF!
+//////// GenLock Info ////////
+        VTC delta above range count = 2
+        VTC delta below range count = 0

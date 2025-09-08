@@ -1,0 +1,205 @@
+ZMonhelp
+Available ZMon commands
+  AGCnBPLevel - Set 8 bit AGC and BP level
+  CtrlArrayManualLoad - CtrlArrayManualLoad
+  CtrlArrayManualSave - CtrlArrayManualSave
+  DBReport   - generate bebug report log
+  DumpVDORegs - Dump video scaler registers
+  IRconfigProtocol - Configure IR protocol. Usage IRconfigProtocol IR_protocol  (NEC=1, RC5=2, RC6=3)
+  ManuCropGet - ManuCropGet
+  ManuCropSet - ManuCropSet
+  PMEnable   - PMEnable first monitor second Monitor
+  TestMode   - Test Mode Tune
+  alog       - set audio debug level
+  assert     - Deliberate assertion failure
+  audinfo    - audio Info
+  bgcolor    - change display background color (r,g,b,mainaux)
+  blankLevel - Set 10 bit blank, vbi blank and blank  level
+  capture_toc - capture TOC buffer content
+  changeSharpenTable - Change Sharpen Table
+  chmap      - print ZTVApp channel map
+  chromaBurst - Set 8 bit chroma burst level
+  chromaGain - Set 8 bit chroma gain
+  config     - show config switch values
+  curralog   - curr audio debug sett
+  cvsharp    - chroma vsharp b_x1000 c_x1000
+  d          - display memory
+  dcache     - show data cache
+  dd         - decrement DDR_DLY parameter
+  di         - increment DDR_DLY parameter
+  dint       - set deinterlace algorithm
+  dispShift  - dispShift
+  dispalog   - print all audio debug sett
+  dll        - Show DLL Shmoo
+  dllAdjust  - Adjust the fixed DLL delay
+  dllAuto    - Set DLL's to auto mode
+  dllChange  - Change DLL settings
+  dllPreset  - Set DLL's to a fixed delay
+  dumpDL     - Dump video Display List
+  dumpEE     - Dump EE
+  dumpTLUT   - Dump TLUT
+  dumpTimers - Display all STC timers
+  dumptsd    - dump transport information
+  dumpvsregcache - dump scaler register cache
+  eeDull     - decrement EE sharpness
+  eeSharp    - increment EE sharpness
+  fill       - fill memory with constant
+  find       - find data in memory
+  flushctrlarray - flush ctrl array
+  fsc        - find start codes
+  gamut      - find color gamut
+  getCSC     - read paramter from CSC
+  getCSC_Param - Get All CSC Param
+  getEE_Param - get EE parameters
+  getSCC_Param - get SCC parameters
+  getTLUT_Param - get TLUT parameters
+  getlrclk   - get LR Clk by calculating CPB pointer advanement
+  getlrclk2  - get LR Clk by calculating IAU pointer advanement
+  getvsharp  - get vertical sharpness value
+  gpio       - GPIO control
+  gpiodir    - configure the gpio to input or output mode
+  gpioread   - read the gpio level
+  gpioreset  - set gpio level to zero
+  gpioset    - set gpio level to one
+  halt       - halt most AV activity
+  heapstat   - display CPU memory heap
+  help       - Display This list
+  history    - display command history
+  hsharp     - set horizontal sharpness
+  i          - list tasks
+  i2c        - list I2C devices
+  i2cr       - I2C read from device
+  i2cw       - I2C write to device
+  icache     - show instruction cache
+  ident      - show version identification
+  insertCC   - insertCC
+  insertLine20 - insertLine20
+  ir_carrier - Configure IR carrier generator. Usage ir_carrier carrier
+  ir_feature_size - Configure IR feature-size. Usage ir_feature_size feature_size
+  ir_prescaler - Configure IR prescaler. Usage ir_prescaler prescaler
+  learnKey   - Learns new remote key learnKey ZTV_key_code
+  m          - modify memory
+  memstat    - display PhysMem heap
+  mifptrs    - Display MIF pointer information
+  msgqs      - list message queues
+  mvRNx      - Read MV Nx registers
+  mvWNx      - Write MV Nx registers
+  otpr       - read otp
+  pcrLockingState - pcrLockingState
+  pinconfig  - configure a pin as primarysecondary function
+  pixelConvert -  convert pixel using current CSC values
+  plug       - simulate plugging and unplugging the antenna
+  pr         - generate problem report log
+  printfSize - change size of printf queue
+  psipinfo   - print PSIP cache information
+  reboot     - Reset and reboot
+  removeLine20 - removeLine20
+  reshuffleDpcOut - reshuffleDpcOut
+  resume     - resume after tlhalt
+  rlkup      - Look up register
+  rr         - read registers symbolically
+  rrc        - read registers as C code
+  rrlkup     - Look up and read register
+  sa         - get best position for the channel
+
+  sachk      - check for smart antenna presence
+
+  saq        - find the best neighbors
+
+  sar        - read cascade params mode 1 (smart antenna) 0 (normal)
+
+  sascan     - scan smart antenna
+
+  sascanall  - scan smart antenna
+
+  sascanall1 - scan smart antenna
+
+  saset      - set to a specific direction
+
+  satune     - just tune to a channel
+
+  sdfCache_DumpCache - sdfCache_DumpCache
+  sdfCache_DumpMemPool - sdfCache_DumpMemPool
+  sems       - list semaphores
+  set        - to set current val at particular index type set index value
+  setAnalogOutput - Set Analog Ouput State
+  setBase_Param - Set Base  Param
+  setCSC     - set different parameter in CSC
+  setCSC_Param - Set  CSC Param
+  setDbDebugLevel - sets SIDB debug level
+  setEE      - turn EE onoff
+  setEE_Adv  - set EE advanced param
+  setEE_Param - set EE paramters
+  setEE_filter - set EE filter
+  setGamma   - set Gamma table
+  setGenLockDGO - setGenLockDGO
+  setGenLockRes - setGenLockRes
+  setHWG     - set HWG bypass
+  setMV      - set different macrovision mode
+  setSCC     - turn SCC onoff
+  setSCC_Color - set src, dst, rng for color
+  setSCC_cb_dst - set SCC cb dst
+  setSCC_cb_mde - set SCC cb mde
+  setSCC_cb_rng - set SCC cb rng
+  setSCC_cb_src - set SCC cb src
+  setSCC_cb_test - set SCC cb test
+  setSCC_cr_dst - set SCC cr dst
+  setSCC_cr_mde - set SCC cr mde
+  setSCC_cr_rng - set SCC cr rng
+  setSCC_cr_src - set SCC cr src
+  setSCC_cr_test - set SCC cb test
+  setSCC_q   - turn SCC quadratic onoff
+  setSCC_y_dst - set SCC y dst
+  setSCC_y_mde - set SCC y mde
+  setSCC_y_rng - set SCC y rng
+  setSCC_y_src - set SCC y src
+  setSCC_y_test - set SCC y test
+  setTLUT    - turn TLUT onoff
+  setTLUT_Extn - set TLUT parm from ext file
+  setTLUT_Param - set TLUT parameters
+  setTLUT_b  - set TLUT for blue
+  setTLUT_g  - set TLUT for green
+  setTLUT_r  - set TLUT for red
+  setWB_Param - Set  White Balance Param
+  sfsc       - search for start code
+  showCCInfo - showCCInfo
+  showDPCptable - Show DPC display list parameter table
+  showDpc    - Show Display ISR Counts
+  showGenLock - showGenLock
+  showKeyMap - Shows remote key mappings for configured protocol
+  showXTAL   - showXTAL
+  sleepms    - sleep milli-secs
+  symaddr    - list zmon symbol table by addr
+  symname    - list zmon symbol table by name
+  syncOnG    - syncOnG
+  td         - task delete
+  temphide   - TempHideTLVideoPlane
+  testTimer  - test STC timers
+  tltrace    - Control API trace facility
+  tltracehelp - Help for TLTrace
+  tltracestatus - Get current trace status
+  tmac       - toggle memory access constraints
+  toccheck   - Display channel buffer info
+  tocpat     - find TOC pattern
+  tone       - generate audio tone
+  tp         - set task priority
+  tr         - task resume
+  trpconfig  - Configure transport input
+  trpinfo    - display transport information
+  ts         - task suspend
+  tsdcheck   - check transport rate
+  tsddata    - raw dump of TSD microcode
+  tunerinfo  - show tuner settings
+  vars       - list debug variables
+  vgo        - unfreeze video
+  viddump    - dump video buffers
+  vidinfo    - show video settings
+  view       - to view entries in TL_controlarray
+  vsharp     - set vertical sharpness
+  vstep      - single step video
+  vstop      - freeze video
+  whiteLevel - Set 10 bit White level
+  ww         - write registers
+  zir        - zmon ir
+Type help command for detailed help on command.
+Type help all for detailed help on all commands.

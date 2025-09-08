@@ -1,0 +1,152 @@
+ZMon>msgqs
+Queue Name          : OS_TerminateQ
+Queue ID            : 0x81E3DAA0
+Queue Message Size  : 8
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B3DAA0 F8:TxTerminate
+
+Queue Name          : ExceptionQ
+Queue ID            : 0x81E3DBF8
+Queue Message Size  : 4
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B3E468 F8:TxException
+
+Queue Name          : tvAppMsgQ
+Queue ID            : 0x81B421C0
+Queue Message Size  : 24
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x8184DAA8 90:tVideoControl
+
+Queue Name          : videoTaskMsgQ
+Queue ID            : 0x81B48C78
+Queue Message Size  : 24
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B4A380 E8:Video
+
+Queue Name          : A52 message Queue
+Queue ID            : 0x81E3EED0
+Queue Message Size  : 44
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81855E38 A8:tA52
+
+Queue Name          : APU_msg_q
+Queue ID            : 0x81B4C548
+Queue Message Size  : 28
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B4CCD0 B0:APU
+
+Queue Name          : TimeoutQ
+Queue ID            : 0x81E3F170
+Queue Message Size  : 8
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81851C70 0D:tTVMiscService
+
+Queue Name          : dpcWatchDogTaskMsgQ
+Queue ID            : 0x81B50868
+Queue Message Size  : 16
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B517F0 A0:dpcWATCHDOG
+
+Queue Name          : qTunerAPI
+Queue ID            : 0x81E3FE18
+Queue Message Size  : 44
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B54B80 0B:tTunerAPI
+
+Queue Name          : CCDecMsgQ
+Queue ID            : 0x81B57DF8
+Queue Message Size  : 24
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B5C198 88:tCCDecoder
+
+Queue Name          : displayQ
+Queue ID            : 0x81B59908
+Queue Message Size  : 8
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B59FD0 70:tCCGraphics
+
+Queue Name          : CCMsgQ
+Queue ID            : 0x818DFC10
+Queue Message Size  : 28
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x818E69D8 78:tCCGfxControlTask
+
+Queue Name          : tATsd_msg_q
+Queue ID            : 0x81E44490
+Queue Message Size  : 36
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B5E360 A8:AudPES_0
+
+Queue Name          : capMsgQ
+Queue ID            : 0x81B5FAB0
+Queue Message Size  : 20
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x8193E9F0 68:tSiDbCaptureTask
+
+Queue Name          : expMsgQ
+Queue ID            : 0x81B602F8
+Queue Message Size  : 20
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B617C8 70:tSiDbExpiryTask
+
+Queue Name          : IRMsgQ
+Queue ID            : 0x81B64BE8
+Queue Message Size  : 8
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81941BB8 58:tIRTask
+
+Queue Name          : easMsgQ
+Queue ID            : 0x81B8E698
+Queue Message Size  : 12
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B8EBA0 A0:tEasTask
+
+Queue Name          : dobQ0 81B44F24
+Queue ID            : 0x81E49FE8
+Queue Message Size  : 8
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B90D68 C0:TSD400
+
+Queue Name          : tvLogoMsgQ
+Queue ID            : 0x81E4AD80
+Queue Message Size  : 4
+Queue Message Count : 0
+Queue Tasks         : 1
+Suspended List:
+   0x81B9AF50 70:DispNoSigLogo

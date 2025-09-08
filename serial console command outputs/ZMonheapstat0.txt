@@ -1,0 +1,16 @@
+ZMon>heapstat 0
+Byte pool @0x817AB250Name = "OS_Heap"
+  Size bytes      = 1844584 = 0x001C2568 = 1801K = 1M
+  Used bytes      =  53448 = 0x0000D0C8 = 52K = 0M = 2%
+  Available bytes = 1791136 = 0x001B54A0 = 1749K = 1M = 97%
+End of byte pool
+Byte pool @0x817AB284Name = "OS_LargeHeap"
+  Size bytes      = 3145728 = 0x00300000 = 3072K = 3M
+  Used bytes      = 1098928 = 0x0010C4B0 = 1073K = 1M = 34%
+  Available bytes = 2046800 = 0x001F3B50 = 1998K = 1M = 65%
+End of byte pool
+Byte pool @0x817AB2B8Name = "OS_MediumHeap"
+  Size bytes      = 3145728 = 0x00300000 = 3072K = 3M
+  Used bytes      = 190344 = 0x0002E788 = 185K = 0M = 6%
+  Available bytes = 2955384 = 0x002D1878 = 2886K = 2M = 93%
+End of byte pool
