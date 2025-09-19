@@ -9,7 +9,7 @@ BACKGROUND:
 
 Software Defined Radio has been increasing in popularity since the discovery that certain DVB-T usb sticks could be hacked to allow reception of more than just OTA tv broadcasts. There are many different versions of these sticks, but they are commonly referred to as 'RTL-SDR's. My understanding is that the functionality of these sticks as SDRs is possible because they have a 'debug mode', user's can gain access to the low-level programming of the hardware and with sufficient knowledge manipulate it to unlock other functionality.
 
-Earlier this year (2025) I repaired the power supply of an Apex-DT-250A digital tv tuner that I had laying around. These were made back in 2007-2008 when the United States ended analogue tv broadcasts. They allow reception of digital broadcasts to be played on any tv with a composite RCA (yellow plug) or s-video input. During that process I noticed what looked like through holes for a serial console connection. So I soldered on some headers and connected a programmer, puttyed in and sure enough a command line appeared.
+Earlier this year (2025) I repaired the power supply of an Apex-DT-250A digital tv tuner that I had laying around. These were made back in 2007-2008 when the United States ended analogue tv broadcasts. They allow reception of digital broadcasts to be played on any tv with a composite RCA (yellow plug) or s-video input. During that process I noticed what looked like through holes for a serial console connection. I had recently used the tutorials found on https://www.makemehack.com/ to connect to and reflash DDWRT to a soft bricked Linksys E3200. Emboldened by this, I soldered on some headers to the 250A, connected a programmer, puttyed in, and sure enough a command line appeared.
 
 I am now interested in seeing if this device can be hacked to harness the hardware as a general purpose SDR. Research on the internet and Reddit have at best yielded an answer of, "maybe/if" and "with enough knowledge and skill". Naysayers cited lack of appropriate hardware, hardware transparency, and hardware security measures as obstacles to hacking this type of device.     
 
@@ -139,9 +139,11 @@ REFERENCES:
 
 I utilized the following sources/sites to figure out serial console access and flashchip reading. If you are new to hardware hacking check them out!
 
-https://libreboot.org/ has a ton of info on bios/uefi firmware creation and flashing, and a lot of other neat info on privacy and Right-To-Repair
+https://libreboot.org/ has a ton of info on bios/uefi firmware creation and flashing, and a lot of other neat info on privacy and Right-To-Repair.
 
 https://www.youtube.com/watch?v=LSQf3iuluYo is YouTube Hardware Hacking Tutorial series. Really excellent, you can get an entire frame of mind for approaching a potential hack and very clear instruction in tools and methods to use. 
+
+https://www.makemehack.com/ author site for the YouTube series.
 
 For more info on SDR check out:
 
