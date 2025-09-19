@@ -1,2 +1,114 @@
 # Apex-DT-250A-SDR-hack-exploration
 Research materials regarding whether or not an Apex DT 250A might be hacked to function as a software defined radio.
+
+Disclosure: I am not an electrical engineer, I was a licensed amateur radio operator until late 2024 when I let my license expire. What is documented and described here represents, more or less, my knowledge and skill with this sort of thing. If you can and want to contribute to furthering this project please let me know. I have a few extra devices and would be happy to provide them, they can also be found pretty cheaply on Ebay. Any advice, tips, or tricks are welcome as well, especially if you can authoritatively say, "stop now, none of this will work and here's why."
+
+
+
+BACKGROUND:
+
+Software Defined Radio has been increasing in popularity since the discovery that certain DVB-T usb sticks could be hacked to allow reception of more than just OTA tv broadcasts. There are many different versions of these sticks, but they are commonly referred to as 'RTL-SDR's. My understanding is that the functionality of these sticks as SDRs is possible because they have a 'debug mode', user's can gain access to the low-level programming of the hardware and with sufficient knowledge manipulate it to unlock other functionality.
+
+Earlier this year (2025) I repaired the power supply of an Apex-DT-250A digital tv tuner that I had laying around. These were made back in 2007-2008 when the United States ended analogue tv broadcasts. They allow reception of digital broadcasts to be played on any tv with a composite RCA (yellow plug) or s-video input. During that process I noticed what looked like through holes for a serial console connection. So I soldered on some headers and connected a programmer, puttyed in and sure enough a command line appeared.
+
+Between poking around on the command line and researching the device online I gained the following knowledge of the device:
+
+
+
+CPU:
+
+Zoran SupraHD 740 SOC
+
+Based on MIPS-32 CPU with suspected ASE's
+
+There are block diagram level datasheets in the 'datasheets' folder that describe the features and specs of this family of system, the 640, 660, and 680. I could not find detailed datasheets nor anything specifically for the 740. Zoran merged with CSR in 2011 and CSR is now part of Qualcomm. There used to be an SDK that Zoran provided.
+
+However, I am thus far undeterred because the debug terminal gives the user access to quite a bit of information, including read/write access to the system's registers, control of gpio state and direction, i2c bus devices, etcetera. As stated above I am not an electrical or computer engineer but it looks like everything one would want might be there. I successfully read ~ 75% of the registers to a file, 'registry\_dump.txt' in the 'dumps' folder. The debug utility command 'rrc' outputs the result of a read in C code in the form of a 'WriteTLReg' call.
+
+
+
+FLASH MEMORY:
+
+The flash chip was made by Spansion/Infineon. There are pictures of it in the hi res images folder. I attempted reading the chip with flashrom/flashprog run on a raspberry pi pico using the instructions for external flashing found on the Libreboot site and confirmed that it is an S25FL016A. There is a preliminary datasheet for the chip in the datasheets folder. I successfully dumped the chip contents and verified the image, apex.bin and apex\_verify.bin are in the dumps folder. I used binwalk to analyze the image. Results can be seen in the dumps folder as well, MIPS CPU is confirmed.
+
+
+
+RAM:
+
+The board very clearly has a Samsung K4H561638H-UCCC chip. There are datasheets for similar models in the datasheets folder. And this also a case where the debug terminal yields detailed information on memory size and contents. I believe there is a datasheet out there for the actual K4H561638H-UCCC and I will add it if I find it.
+
+
+
+OS:
+
+The operating system is ThreadX. ThreadX is a RTOS and is still actively developed/maintained. Microsoft recently open sourced ThreadX and its source code can be found on GitHub. Debug terminal provides information on semaphores, tasks, allows task tracing, etcetera.
+
+
+
+TUNER:
+
+The tuner is a Thomson DTT76852, could not find any other information on it.
+
+
+
+OTHER:
+
+The debug terminal provides quite a bit of information, there is a configuration switch printout that references various other chips and tuners. The AD9833 is mentioned in there somewhere and a datasheet is included in the folder.
+
+The Association for Maximum Service Television (MSTV) and the National
+Association of Broadcasters (NAB) tested a group of similar boxes back in 2008. Their report is found in the datasheets folder and named ConverterBox\_report.doc.pdf
+
+PORTS:
+
+There are through holes for a 4 pin header which I used for console access. A 7 pin header near the edge of the board and a 6 pin next to the processor which I assume is an EJTAG port. There is a 'smart antenna' port in the back, the standard for these is CEA-909-A. The port is capable of bidirectional communication. The box also supports Analog RF Passthrough so you could pipe an antenna through the box and out again to an RTL or other SDR.
+
+
+
+IDEA/GOAL:
+
+I ran and copied any debug command that seemed like it might be relevant. I am curious to know if there is enough information here to:
+
+1. Create and flash a custom operating system, ThreadX, Linux, something else.
+2. Add hardware/functionality via the through hole ports or by reprogramming the smart antenna port. The latest ThreadX has support available for USB, Networking, and File Storage
+3. Through some combination of the above modify the device to act as an 'RTL-like' SDR or extend its current functionality to allow it to play other signals than ATSC, FM/AM etcetera. Think a gqrx/SDR#/SDR++ like display but directly from the box to a tv.
+4. Do any kind of interesting or neat hack with this box.
+
+
+
+Ultimately, I want to improve my understanding of embedded systems and electronic hardware and have done so thus far.
+
+
+
+BUSINESS CASE:
+
+From a market perspective (what would make this interesting in an RTL-SDR's world?) I think adding to existing functionality makes the most sense. Either by adding other signal reception to current capabilities internally in software, or by creating simple, easily repeatable mods that would, say, allow for an RTLSDR to be connected along with a Wifi chip/dongle (think OpenWRT router running RTL\_TCP but with ATSC decoding and smart antenna capability builtin). These can be had as or more cheaply than an RTLSDR v3 on Ebay and could make a fun addition to the DIY/SDR market.
+
+
+
+RISKS:
+
+Hardware:
+
+16Mb of flash and 256Mb of RAM are not bad, not much if any different from a consumer router and DDWRT can run on a MIPS based router. However if the goal is to run processing intensive SDR I don't think the CPU will be sufficient. On the other hand, it does already function this way for ATSC, and I wonder if the functions present in the DSP parts of the SoC could be reused to process other signal types. An unknown and beyond my knowledge/skill at this point.
+
+Unread/Unknown/Protected Registers:
+
+Some of the registers that cause system reboot when reading is attempted have enticing labels like the following:
+
+GPADC\_CTRL\_REG
+GPADC\_START\_REG
+GPADC\_STATUS\_REG
+GPADC\_DATA\_REG
+AFE\_BYPASS\_CTL\_REG
+DEBUG\_PIN\_DEBUGBUS\_O\_SEL\_REG
+IFAFE\_ADCMODE\_REG
+IFAFE\_ADCCONTROL1\_REG
+IFAFE\_OUTPUT\_OPTIONS\_REG
+
+If these are necessary for modifying and they are protected then that could be prohibitive. Again, I am not an EE and don't know enough to know.
+
+
+
+NEXT STEPS:
+
+I know the I can flash new firmware to the device but have no experience writing firmware. So the next steps for me will have to be researching MIPS architecture, ThreadX OS, and creating a basic Linux firmware. And also looking into what might be added (USB, Wifi, ...) via the exposed through holes or the IR pin headers.
