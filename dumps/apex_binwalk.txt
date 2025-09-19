@@ -1,0 +1,6 @@
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+2148          0x864           MIPS instructions, function epilogue
+1140110       0x11658E        MIPS instructions, function epilogue
+
