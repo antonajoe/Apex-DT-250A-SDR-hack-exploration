@@ -11,6 +11,8 @@ Software Defined Radio has been increasing in popularity since the discovery tha
 
 Earlier this year (2025) I repaired the power supply of an Apex-DT-250A digital tv tuner that I had laying around. These were made back in 2007-2008 when the United States ended analogue tv broadcasts. They allow reception of digital broadcasts to be played on any tv with a composite RCA (yellow plug) or s-video input. During that process I noticed what looked like through holes for a serial console connection. So I soldered on some headers and connected a programmer, puttyed in and sure enough a command line appeared.
 
+I am now interested in seeing if this device can be hacked to harness the hardware as a general purpose SDR. Research on the internet and Reddit have at best yielded an answer of, "maybe/if" and "with enough knowledge and skill". Naysayers cited lack of appropriate hardware, hardware transparency, and hardware security measures as obstacles to hacking this type of device.     
+
 Between poking around on the command line and researching the device online I gained the following knowledge of the device:
 
 
@@ -29,47 +31,53 @@ However, I am thus far undeterred because the debug terminal gives the user acce
 
 FLASH MEMORY:
 
-The flash chip was made by Spansion/Infineon. There are pictures of it in the hi res images folder. I attempted reading the chip with flashrom/flashprog run on a raspberry pi pico using the instructions for external flashing found on the Libreboot site and confirmed that it is an S25FL016A. There is a preliminary datasheet for the chip in the datasheets folder. I successfully dumped the chip contents and verified the image, apex.bin and apex\_verify.bin are in the dumps folder. I used binwalk to analyze the image. Results can be seen in the dumps folder as well, MIPS CPU is confirmed.
+The flash chip was made by Spansion/Infineon. There are pictures of it in the 'hi res images folder'. I attempted reading the chip with flashrom/flashprog run on a raspberry pi pico using the instructions for external flashing found on https://libreboot.org/docs/install/spi.html and confirmed that it is an S25FL016A. There is a preliminary datasheet for the chip in the datasheets folder. I successfully dumped the chip contents and verified the image, 'apex.bin' and 'apex\_verify.bin' are in the dumps folder. I used binwalk to analyze the image. Results can be seen in the dumps folder as well, MIPS CPU is confirmed.
 
 
 
 RAM:
 
-The board very clearly has a Samsung K4H561638H-UCCC chip. There are datasheets for similar models in the datasheets folder. And this also a case where the debug terminal yields detailed information on memory size and contents. I believe there is a datasheet out there for the actual K4H561638H-UCCC and I will add it if I find it.
+The board very clearly has a Samsung K4H561638H-UCCC chip. There is a datasheet in 'datasheets' for the K4H561638H-UCCC and similar.
 
 
 
 OS:
 
-The operating system is ThreadX. ThreadX is a RTOS and is still actively developed/maintained. Microsoft recently open sourced ThreadX and its source code can be found on GitHub. Debug terminal provides information on semaphores, tasks, allows task tracing, etcetera.
+The operating system is ThreadX. ThreadX is a RTOS and is still actively developed/maintained. Microsoft recently open sourced ThreadX and its source code can be found on GitHub. Debug terminal provides information on semaphores, tasks, allows task tracing, etcetera. For more info see:
+
+https://threadx.io/
+
+and
+
+https://github.com/eclipse-threadx/threadx
 
 
 
 TUNER:
 
-The tuner is a Thomson DTT76852, could not find any other information on it.
+The tuner is a Thomson DTT76852, I could not find any other information on it.
 
 
 
 OTHER:
 
-The debug terminal provides quite a bit of information, there is a configuration switch printout that references various other chips and tuners. The AD9833 is mentioned in there somewhere and a datasheet is included in the folder.
+In the debug terminal there is a configuration switch printout that references various other chips and tuners. The AD9833 is mentioned in there somewhere and a datasheet is included in the folder.
 
 The Association for Maximum Service Television (MSTV) and the National
 Association of Broadcasters (NAB) tested a group of similar boxes back in 2008. Their report is found in the datasheets folder and named ConverterBox\_report.doc.pdf
 
 PORTS:
 
-There are through holes for a 4 pin header which I used for console access. A 7 pin header near the edge of the board and a 6 pin next to the processor which I assume is an EJTAG port. There is a 'smart antenna' port in the back, the standard for these is CEA-909-A. The port is capable of bidirectional communication. The box also supports Analog RF Passthrough so you could pipe an antenna through the box and out again to an RTL or other SDR.
+There are through holes for a 4 pin header which I used for console access. A 7 pin header near the edge of the board and a 6 pin next to the processor which I assume is an EJTAG port. There is a 'smart antenna' port in the back, the standard for these is CEA-909-A. The port is capable of bidirectional communication. The box also supports Analog RF Passthrough so you could pipe an antenna through the box and out again to an RTL or other SDR. The IR blaster connects to the main board using 4 pins of a 6 pin header on the same edge as the 7-pin and 4-pin. 
 
 
 
 IDEA/GOAL:
 
-I ran and copied any debug command that seemed like it might be relevant. I am curious to know if there is enough information here to:
+I ran and copied any debug command that seemed like it might be relevant, and having learned of putty's logging feature will script and run a complete dump soon. I am curious to know if there is enough information here to:
 
-1. Create and flash a custom operating system, ThreadX, Linux, something else.
-2. Add hardware/functionality via the through hole ports or by reprogramming the smart antenna port. The latest ThreadX has support available for USB, Networking, and File Storage
+1. Create and flash a custom operating system, ThreadX, Linux, maybe something else.
+2. Add hardware/functionality via the through hole ports or by reprogramming the smart antenna or IR ports. The latest ThreadX has support available for USB, Networking, and File Storage
 3. Through some combination of the above modify the device to act as an 'RTL-like' SDR or extend its current functionality to allow it to play other signals than ATSC, FM/AM etcetera. Think a gqrx/SDR#/SDR++ like display but directly from the box to a tv.
 4. Do any kind of interesting or neat hack with this box.
 
@@ -81,7 +89,7 @@ Ultimately, I want to improve my understanding of embedded systems and electroni
 
 BUSINESS CASE:
 
-From a market perspective (what would make this interesting in an RTL-SDR's world?) I think adding to existing functionality makes the most sense. Either by adding other signal reception to current capabilities internally in software, or by creating simple, easily repeatable mods that would, say, allow for an RTLSDR to be connected along with a Wifi chip/dongle (think OpenWRT router running RTL\_TCP but with ATSC decoding and smart antenna capability builtin). These can be had as or more cheaply than an RTLSDR v3 on Ebay and could make a fun addition to the DIY/SDR market.
+From a market perspective (what would make this interesting in an RTL-SDR's world?) I think adding to existing functionality makes the most sense. Either by adding other signal reception to current capabilities internally in software, or by creating simple, easily repeatable mods that would, say, allow for an RTLSDR to be connected along with a Wifi chip/dongle (think OpenWRT router running RTL\_TCP but with ATSC decoding and smart antenna capability builtin). These can be had as or more cheaply than an RTLSDR v3 on Ebay and could make a fun addition to the DIY/SDR market. It has been a fun and cheap way to practice with a serial programmer and chip reading with a raspberry pi pico.
 
 
 
@@ -89,26 +97,57 @@ RISKS:
 
 Hardware:
 
-16Mb of flash and 256Mb of RAM are not bad, not much if any different from a consumer router and DDWRT can run on a MIPS based router. However if the goal is to run processing intensive SDR I don't think the CPU will be sufficient. On the other hand, it does already function this way for ATSC, and I wonder if the functions present in the DSP parts of the SoC could be reused to process other signal types. An unknown and beyond my knowledge/skill at this point.
+16Mb of flash and 256Mb(according to the datasheet) of RAM are not bad. Not much if any different from a consumer router and DDWRT can run on a MIPS based router. Also, running SDR++ on Ubuntu cost about 210mb of memory give or take. However if the goal is to run a processing intensive SDR program like SDR++ I don't think the CPU will be sufficient. On the other hand, it does already function this way for ATSC, and I wonder if the functions present in the DSP parts of the SoC could be reused to process other signal types. An unknown and beyond my knowledge/skill at this point.
 
 Unread/Unknown/Protected Registers:
 
 Some of the registers that cause system reboot when reading is attempted have enticing labels like the following:
 
-GPADC\_CTRL\_REG
-GPADC\_START\_REG
-GPADC\_STATUS\_REG
-GPADC\_DATA\_REG
-AFE\_BYPASS\_CTL\_REG
-DEBUG\_PIN\_DEBUGBUS\_O\_SEL\_REG
-IFAFE\_ADCMODE\_REG
-IFAFE\_ADCCONTROL1\_REG
-IFAFE\_OUTPUT\_OPTIONS\_REG
+GPADC_CTRL_REG
+GPADC_START_REG
+GPADC_STATUS_REG
+GPADC_DATA_REG
+AFE_BYPASS_CTL_REG
+DEBUG_PIN_DEBUGBUS_O_SEL_REG
+IFAFE_ADCMODE_REG
+IFAFE_ADCCONTROL1_REG
+IFAFE_OUTPUT_OPTIONS_REG
 
-If these are necessary for modifying and they are protected then that could be prohibitive. Again, I am not an EE and don't know enough to know.
+Where I'm assuming: 
+AFE = Analogue Front End
+ADC = Analogue to Digital Converter
+
+and that,
+AFE_BYPASS_CTL_REG
+DEBUG_PIN_DEBUGBUS_O_SEL_REG
+IFAFE_ADCMODE_REG
+might mean, "you won't be doing any cool RTLSDR like tricks without these." 
+
+If these are necessary for modifying and they are protected then that could be prohibitive. 
+Once more, I am not an EE/CE and don't know enough to know. Advice is welcome!
 
 
 
 NEXT STEPS:
 
-I know the I can flash new firmware to the device but have no experience writing firmware. So the next steps for me will have to be researching MIPS architecture, ThreadX OS, and creating a basic Linux firmware. And also looking into what might be added (USB, Wifi, ...) via the exposed through holes or the IR pin headers.
+I know the I can flash new firmware to the device but have no experience writing firmware. So the next steps for me will have to be researching MIPS architecture, ThreadX OS, and creating a basic Linux firmware. As well as looking into what might be added (USB, Wifi, ...) via the exposed through holes or the IR pin headers.
+
+Again, if you can and would like to contribute, especially with firmware knowledge, please contact me. I am willing to provide the hardware to work on. 
+
+
+REFERENCES:
+
+I utilized the following sources/sites to figure out serial console access and flashchip reading. If you are new to hardware hacking check them out!
+
+https://libreboot.org/ has a ton of info on bios/uefi firmware creation and flashing, and a lot of other neat info on privacy and Right-To-Repair
+
+https://www.youtube.com/watch?v=LSQf3iuluYo is YouTube Hardware Hacking Tutorial series. Really excellent, you can get an entire frame of mind for approaching a potential hack and very clear instruction in tools and methods to use. 
+
+For more info on SDR check out:
+
+https://www.rtl-sdr.com/about-rtl-sdr/
+
+and 
+
+https://osmocom.org/projects/rtl-sdr/wiki
+
