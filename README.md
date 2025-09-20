@@ -5,7 +5,7 @@ Disclosure: I am not an electrical engineer, I was a licensed amateur radio oper
 
 
 
-BACKGROUND:
+# BACKGROUND:
 
 Software Defined Radio has been increasing in popularity since the discovery that certain DVB-T usb sticks could be hacked to allow reception of more than just OTA tv broadcasts. There are many different versions of these sticks, but they are commonly referred to as 'RTL-SDR's. My understanding is that the functionality of these sticks as SDRs is possible because they have a 'debug mode', user's can gain access to the low-level programming of the hardware and with sufficient knowledge manipulate it to unlock other functionality.
 
@@ -17,7 +17,7 @@ Between poking around on the command line and researching it online I gained the
 
 
 
-CPU:
+## CPU:
 
 Zoran SupraHD 740 SOC
 
@@ -29,19 +29,19 @@ However, I am thus far undeterred because the debug terminal gives the user acce
 
 
 
-FLASH MEMORY:
+## FLASH MEMORY:
 
 The flash chip was made by Spansion/Infineon. There are pictures of it in the 'hi res images folder'. I attempted reading the chip with flashrom/flashprog run on a raspberry pi pico using the instructions for external flashing found on https://libreboot.org/docs/install/spi.html and confirmed that it is an S25FL016A. There is a preliminary datasheet for the chip in the datasheets folder. I successfully dumped the chip contents and verified the image, 'apex.bin' and 'apex\_verify.bin' are in the dumps folder. I used binwalk to analyze the image. Results can be seen in the dumps folder as well, MIPS CPU is confirmed.
 
 
 
-RAM:
+## RAM:
 
 The board very clearly has a Samsung K4H561638H-UCCC chip. There is a datasheet in 'datasheets' for the K4H561638H-UCCC and similar.
 
 
 
-OS:
+## OS:
 
 The operating system is ThreadX. ThreadX is a RTOS and is still actively developed/maintained. Microsoft recently open sourced ThreadX and its source code can be found on GitHub. Debug terminal provides information on semaphores, tasks, allows task tracing, etcetera. For more info see:
 
@@ -53,26 +53,26 @@ https://github.com/eclipse-threadx/threadx
 
 
 
-TUNER:
+## TUNER:
 
 The tuner is a Thomson DTT76852, I could not find any other information on it.
 
 
 
-OTHER:
+## OTHER:
 
 In the debug terminal there is a configuration switch printout that references various other chips and tuners. The AD9833 is mentioned in there somewhere and a datasheet is included in the folder.
 
 The Association for Maximum Service Television (MSTV) and the National
 Association of Broadcasters (NAB) tested a group of similar boxes back in 2008. Their report is found in the datasheets folder and named ConverterBox\_report.doc.pdf
 
-PORTS:
+## PORTS:
 
 There are through holes for a 4 pin header which I used for console access. A 7 pin header near the edge of the board and a 6 pin next to the processor which I assume is an EJTAG port. There is a 'smart antenna' port in the back, the standard for these is CEA-909-A. The port is capable of bidirectional communication. The box also supports Analog RF Passthrough so you could pipe an antenna through the box and out again to an RTL or other SDR. The IR blaster connects to the main board using 4 pins of a 6 pin header on the same edge as the 7-pin and 4-pin. 
 
 
 
-IDEA/GOAL:
+## IDEA/GOAL:
 
 I ran and copied any debug command that seemed like it might be relevant, and having learned of putty's logging feature will script and run a complete dump soon. I am curious to know if there is enough information here to:
 
@@ -87,22 +87,22 @@ Ultimately, I want to improve my understanding of embedded systems and electroni
 
 
 
-BUSINESS CASE:
+## BUSINESS CASE:
 
 From a market perspective (what would make this interesting in an RTL-SDR's world?) I think adding to existing functionality makes the most sense. Either by adding other signal reception to current capabilities internally in software, or by creating simple, easily repeatable mods that would, say, allow for an RTLSDR to be connected along with a Wifi chip/dongle (think OpenWRT router running RTL\_TCP but with ATSC decoding and smart antenna capability builtin). These can be had as or more cheaply than an RTLSDR v3 on Ebay and could make a fun addition to the DIY/SDR market. It has been a fun and cheap way to practice with a serial programmer and chip reading with a raspberry pi pico.
 
 
 
-RISKS:
+## RISKS:
 
-Hardware:
+### Hardware:
 
 16Mb of flash and 256Mb(according to the datasheet) of RAM are not bad. Not much if any different from a consumer router and DDWRT can run on a MIPS based router. Also, running SDR++ on Ubuntu cost about 210mb of memory give or take. However if the goal is to run a processing intensive SDR program like SDR++ I don't think the CPU will be sufficient. On the other hand, it does already function this way for ATSC, and I wonder if the functions present in the DSP parts of the SoC could be reused to process other signal types. An unknown and beyond my knowledge/skill at this point.
 
 Unread/Unknown/Protected Registers:
 
 Some of the registers that cause system reboot when reading is attempted have enticing labels like the following:
-
+'
 GPADC_CTRL_REG
 GPADC_START_REG
 GPADC_STATUS_REG
@@ -112,6 +112,7 @@ DEBUG_PIN_DEBUGBUS_O_SEL_REG
 IFAFE_ADCMODE_REG
 IFAFE_ADCCONTROL1_REG
 IFAFE_OUTPUT_OPTIONS_REG
+'
 
 Where I'm assuming: 
 AFE = Analogue Front End
@@ -128,7 +129,7 @@ Once more, I am not an EE/CE and don't know enough to know. Advice is welcome!
 
 
 
-NEXT STEPS:
+## NEXT STEPS:
 
 Scripting a complete dump of every command in the debug terminal.
 
@@ -141,7 +142,7 @@ I know the I can flash new firmware to the device but have no experience writing
 Again, if you can and would like to contribute, especially with firmware knowledge, please contact me. I am willing to provide the hardware to work on. 
 
 
-REFERENCES:
+## REFERENCES:
 
 I utilized the following sources/sites to figure out serial console access and flashchip reading. If you are new to hardware hacking check them out!
 
