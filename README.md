@@ -99,10 +99,10 @@ From a market perspective (what would make this interesting in an RTL-SDR's worl
 
 16Mb of flash and 256Mb(according to the datasheet) of RAM are not bad. Not much if any different from a consumer router and DDWRT can run on a MIPS based router. Also, running SDR++ on Ubuntu cost about 210mb of memory give or take. However if the goal is to run a processing intensive SDR program like SDR++ I don't think the CPU will be sufficient. On the other hand, it does already function this way for ATSC, and I wonder if the functions present in the DSP parts of the SoC could be reused to process other signal types. An unknown and beyond my knowledge/skill at this point.
 
-Unread/Unknown/Protected Registers:
+### Unread/Unknown/Protected Registers:
 
 Some of the registers that cause system reboot when reading is attempted have enticing labels like the following:
-'
+'''
 GPADC_CTRL_REG
 GPADC_START_REG
 GPADC_STATUS_REG
@@ -112,7 +112,7 @@ DEBUG_PIN_DEBUGBUS_O_SEL_REG
 IFAFE_ADCMODE_REG
 IFAFE_ADCCONTROL1_REG
 IFAFE_OUTPUT_OPTIONS_REG
-'
+'''
 
 Where I'm assuming: 
 AFE = Analogue Front End
