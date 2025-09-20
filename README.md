@@ -1,4 +1,4 @@
-# Apex-DT-250A SDR Hack Exploration
+# Apex-DT-250/250A SDR Hack Exploration
 Research materials regarding whether or not an Apex DT 250A might be hacked to function as a software defined radio.
 
 Disclosure: I am not an electrical engineer, I was a licensed amateur radio operator until late 2024 when I let my license expire. What is documented and described here represents, more or less, my knowledge and skill with this sort of thing. If you can and want to contribute to furthering this project please let me know. I have a few extra devices and would be happy to provide them, they can also be found pretty cheaply on Ebay. Any advice, tips, or tricks are welcome as well, especially if you can authoritatively say, "stop now, none of this will work and here's why."
@@ -31,21 +31,23 @@ Based on MIPS-32 CPU with suspected ASE's
 
 There are block diagram level datasheets in the 'datasheets' folder that describe the features and specs of this family of system, the 640, 660, and 680. I could not find detailed datasheets nor anything specifically for the 740. Zoran merged with CSR in 2011 and CSR is now part of Qualcomm. There used to be an SDK that Zoran provided.
 
-However, I am thus far undeterred because the debug terminal gives the user access to quite a bit of information, including read/write access to the system's registers, control of gpio state and direction, i2c bus devices, etcetera. As stated above I am not an electrical or computer engineer but it looks like everything one would want might be there. I successfully read ~ 75% of the registers to a file, 'registry\_dump.txt' in the 'dumps' folder. The debug utility command 'rrc' outputs the result of a read in C code in the form of a 'WriteTLReg' call.
+However, I am thus far undeterred because the debug terminal gives the user access to quite a bit of information, including read/write access to the system's registers, control of gpio state and direction, i2c bus devices, etcetera. I successfully read ~ 75% of the registers to a file, 'registry\_dump.txt' in the 'dumps' folder. The debug utility command 'rrc' outputs the result of a read in C code in the form of a 'WriteTLReg' call. The other ~25% are Read/Write protected, their labels and addresses are known and listed in 'unread_registers.txt'. I do not kow if they are software or hardware protected, read commands reboot the system, write commands produce no output.
 
 
 
 ## FLASH MEMORY:
 
-The flash chip was made by Spansion/Infineon. There are pictures of it in the 'hi res images folder'. I attempted reading the chip with flashrom/flashprog run on a raspberry pi pico using the instructions for external flashing found on https://libreboot.org/docs/install/spi.html and confirmed that it is an S25FL016A. There is a preliminary datasheet for the chip in the datasheets folder. I successfully dumped the chip contents and verified the image, 'apex.bin' and 'apex\_verify.bin' are in the dumps folder. I used binwalk to analyze the image. Results can be seen in the dumps folder as well, MIPS CPU is confirmed.
+The flash chip was made by Spansion/Infineon. There are pictures of it in the 'hi res images folder'. I attempted reading the chip with flashrom/flashprog run on a raspberry pi pico using the instructions for external flashing found on https://libreboot.org/docs/install/spi.html and confirmed that it is an S25FL016A/S25FL016A1F. There is a preliminary datasheet for the chip in the datasheets folder. I successfully dumped the chip contents and verified the image, 'apex.bin' and 'apex\_verify.bin' are in the dumps folder. I used binwalk to analyze the image. Results can be seen in the dumps folder as well, MIPS CPU is confirmed.
 
 
 
 ## RAM:
 
-The board very clearly has a Samsung K4H561638H-UCCC chip. There is a datasheet in 'datasheets' for the K4H561638H-UCCC and similar.
+The 250 board has a Samsung K4H561638H-UCCC chip. There is a datasheet in 'datasheets' for the K4H561638H-UCCC and similar.
 
+The 250A board has a Hynix HY5DU561622FTP-5.
 
+Both chips are 256mb
 
 ## OS:
 
@@ -61,9 +63,9 @@ https://github.com/eclipse-threadx/threadx
 
 ## TUNER:
 
-The tuner is a Thomson DTT76852, I could not find any other information on it.
+The 250 board tuner is a Thomson DTT76852, I could not find any other information on it.
 
-
+The 250A has a Microtune MT2131F. There is a preliminary datasheet for the 2131 in datasheets
 
 ## OTHER:
 
@@ -83,8 +85,8 @@ There are through holes for a 4 pin header which I used for console access. A 7 
 I ran and copied any debug command that seemed like it might be relevant, and having learned of putty's logging feature will script and run a complete dump soon. I am curious to know if there is enough information here to:
 
 1. Create and flash a custom operating system, ThreadX, Linux, maybe something else.
-2. Add hardware/functionality via the through hole ports or by reprogramming the smart antenna or IR ports. The latest ThreadX has support available for USB, Networking, and File Storage
-3. Through some combination of the above modify the device to act as an 'RTL-like' SDR or extend its current functionality to allow it to play other signals than ATSC, FM/AM etcetera. Think a gqrx/SDR#/SDR++ like display but directly from the box to a tv.
+2. Add hardware/functionality via the through hole ports or by reprogramming the smart antenna or IR ports. The latest ThreadX has support available for USB, Networking, and File Storage. An MCP2221 demo board might work for this.
+3. Through some combination of the above modify the device to act as an 'RTL-like' SDR or extend its current functionality to allow it to play other signals than ATSC, FM/AM etcetera. Think a GQRX/SDR#/SDR++ like display but directly from the box to a tv.
 4. Do any kind of interesting or neat hack with this box.
 
 
@@ -103,11 +105,11 @@ From a market perspective (what would make this interesting in an RTL-SDR's worl
 
 ### Hardware:
 
-16Mb of flash and 256Mb(according to the datasheet) of RAM are not bad. Not much if any different from a consumer router and DDWRT can run on a MIPS based router. Also, running SDR++ on Ubuntu cost about 210mb of memory give or take. However if the goal is to run a processing intensive SDR program like SDR++ I don't think the CPU will be sufficient. On the other hand, it does already function this way for ATSC, and I wonder if the functions present in the DSP parts of the SoC could be reused to process other signal types. An unknown and beyond my knowledge/skill at this point.
+16Mb of flash and 256Mb of RAM are not bad. Not much if any different from a consumer router and DDWRT can run on a MIPS based router. Also, running SDR++ on Ubuntu cost about 210mb of memory give or take. However if the goal is to run a processing intensive SDR program like SDR++ I don't think the CPU will be sufficient. On the other hand, it does already function this way for ATSC, and I wonder if the functions present in the DSP parts of the SoC could be reused to process other signal types. An unknown and beyond my knowledge/skill at this point.
 
-### Unread/Unknown/Protected Registers:
+### Protected Registers:
 
-Some of the registers that cause system reboot when reading is attempted have enticing labels like the following:
+Some of the registers that are read/write protected have enticing labels like the following:
 ```
 GPADC_CTRL_REG
 GPADC_START_REG
@@ -119,23 +121,7 @@ IFAFE_ADCMODE_REG
 IFAFE_ADCCONTROL1_REG
 IFAFE_OUTPUT_OPTIONS_REG
 ```
-Where I'm assuming:
-`
-AFE = Analogue Front End
-`
- and 
-`
-ADC = Analogue to Digital Converter
-`
-and that,
-```
-AFE_BYPASS_CTL_REG
-DEBUG_PIN_DEBUGBUS_O_SEL_REG
-IFAFE_ADCMODE_REG
-```
-being unreadable might mean, "you won't be doing any cool RTLSDR like tricks without these." 
-
-If these are necessary for modifying and they are protected then that could be prohibitive. 
+If these are necessary for modifying then that could be prohibitive. 
 Once more, I am not an EE/CE and don't know enough to know. Advice is welcome!
 
 
