@@ -116,6 +116,9 @@ IFAFE_OUTPUT_OPTIONS_REG
 Where I'm assuming:
 `
 AFE = Analogue Front End
+`
+ and 
+`
 ADC = Analogue to Digital Converter
 `
 and that,
@@ -124,7 +127,7 @@ AFE_BYPASS_CTL_REG
 DEBUG_PIN_DEBUGBUS_O_SEL_REG
 IFAFE_ADCMODE_REG
 ```
-might mean, "you won't be doing any cool RTLSDR like tricks without these." 
+being unreadable might mean, "you won't be doing any cool RTLSDR like tricks without these." 
 
 If these are necessary for modifying and they are protected then that could be prohibitive. 
 Once more, I am not an EE/CE and don't know enough to know. Advice is welcome!
