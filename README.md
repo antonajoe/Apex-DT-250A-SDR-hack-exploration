@@ -102,7 +102,7 @@ From a market perspective (what would make this interesting in an RTL-SDR's worl
 ### Unread/Unknown/Protected Registers:
 
 Some of the registers that cause system reboot when reading is attempted have enticing labels like the following:
-'''
+.
 GPADC_CTRL_REG
 GPADC_START_REG
 GPADC_STATUS_REG
@@ -112,7 +112,6 @@ DEBUG_PIN_DEBUGBUS_O_SEL_REG
 IFAFE_ADCMODE_REG
 IFAFE_ADCCONTROL1_REG
 IFAFE_OUTPUT_OPTIONS_REG
-'''
 
 Where I'm assuming: 
 AFE = Analogue Front End
