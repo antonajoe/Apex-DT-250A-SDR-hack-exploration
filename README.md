@@ -153,7 +153,7 @@ I know the I can flash new firmware to the device but have no experience writing
 Again, if you can and would like to contribute, especially with firmware knowledge, please contact me. I am willing to provide the hardware to work on. 
 
 
-## REFERENCES:
+## REFERENCES \ LINKS:
 
 I utilized the following sources/sites to figure out serial console access and flashchip reading. If you are new to hardware hacking check them out!
 
