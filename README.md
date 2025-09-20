@@ -1,4 +1,4 @@
-# Apex-DT-250A-SDR-hack-exploration
+# Apex-DT-250A SDR Hack Exploration
 Research materials regarding whether or not an Apex DT 250A might be hacked to function as a software defined radio.
 
 Disclosure: I am not an electrical engineer, I was a licensed amateur radio operator until late 2024 when I let my license expire. What is documented and described here represents, more or less, my knowledge and skill with this sort of thing. If you can and want to contribute to furthering this project please let me know. I have a few extra devices and would be happy to provide them, they can also be found pretty cheaply on Ebay. Any advice, tips, or tricks are welcome as well, especially if you can authoritatively say, "stop now, none of this will work and here's why."
