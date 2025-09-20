@@ -130,6 +130,12 @@ Once more, I am not an EE/CE and don't know enough to know. Advice is welcome!
 
 NEXT STEPS:
 
+Scripting a complete dump of every command in the debug terminal.
+
+Checking the flash chip for software/hardware write protection, and if so, learning to unlock it and perform a bulk erase.
+
+Understanding radio demodulation algorithms better and looking for firmware level instructions already present on device that might be reused. 
+
 I know the I can flash new firmware to the device but have no experience writing firmware. So the next steps for me will have to be researching MIPS architecture, ThreadX OS, and creating a basic Linux firmware. As well as looking into what might be added (USB, Wifi, ...) via the exposed through holes or the IR pin headers.
 
 Again, if you can and would like to contribute, especially with firmware knowledge, please contact me. I am willing to provide the hardware to work on. 
