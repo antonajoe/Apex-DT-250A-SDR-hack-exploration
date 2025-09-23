@@ -19,7 +19,7 @@ Earlier this year (2025) I repaired the power supply of an Apex-DT-250A digital 
 
 I am now interested in seeing if this device can be hacked to harness the hardware as a general purpose SDR. Research on the internet and Reddit have at best yielded an answer of, "maybe/if" and "with enough knowledge and skill". Naysayers cited lack of appropriate hardware, hardware transparency, and hardware security measures as obstacles to hacking this type of device.     
 
-Between poking around on the command line and researching it online I gained the following knowledge of the device:
+What I have found so far:
 
 
 
