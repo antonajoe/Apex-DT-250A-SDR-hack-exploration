@@ -29,7 +29,8 @@ Zoran SupraHD 740
 
 MIPS-32 CPU with Application Specific Extensions
 
-Cascade2 CAS-220 Demodulator IC     - datasheet in folder   NOTE: there is a Korean version of this device and the CAS-220 in this version includes FM demodulation capability similar to the dual role the rtl-sdr's can play.  
+Cascade2 CAS-220 Demodulator IC     - datasheet in folder   
+NOTE: there is a Korean version of this device and the CAS-220 in this version includes FM demodulation capability similar to the dual role the rtl-sdr's can play.  
 
 CVE3 NTSC/PAL/SECAM Video Encoder   - datasheet in folder
 
