@@ -23,7 +23,9 @@ What I have found so far:
 
 
 
-## SOC: Zoran SupraHD 740
+## SOC: 
+
+Zoran SupraHD 740
 
 MIPS-32 CPU with Application Specific Extensions
 
