@@ -23,15 +23,17 @@ What I have found so far:
 
 
 
-## CPU:
+## SOC: Zoran SupraHD 740
 
-Zoran SupraHD 740 SOC
+MIPS-32 CPU with Application Specific Extensions
 
-Based on MIPS-32 CPU with suspected ASE's
+Cascade2 CAS-220 Demodulator IC     - datasheet in folder   NOTE: there is a Korean version of this device and the CAS-220 in this version includes FM demodulation capability similar to the dual role the rtl-sdr's can play.  
 
-There are block diagram level datasheets in the 'datasheets' folder that describe the features and specs of this family of system, the 640, 660, and 680. I could not find detailed datasheets nor anything specifically for the 740. Zoran merged with CSR in 2011 and CSR is now part of Qualcomm. There used to be an SDK that Zoran provided.
+CVE3 NTSC/PAL/SECAM Video Encoder   - datasheet in folder
 
-However, I am thus far undeterred because the debug terminal gives the user access to quite a bit of information, including read/write access to the system's registers, control of gpio state and direction, i2c bus devices, etcetera. I successfully read ~ 75% of the registers to a file, 'registry\_dump.txt' in the 'dumps' folder. The debug utility command 'rrc' outputs the result of a read in C code in the form of a 'WriteTLReg' call. The other ~25% are Read/Write protected, their labels and addresses are known and listed in 'unread_registers.txt'. I do not kow if they are software or hardware protected, read commands reboot the system, write commands produce no output.
+CVD2 NTSC/PAL/SECAM Video Decoder   - datasheet in folder
+
+The debug terminal command 'rrc {start_register} {stop_register}' dumps the registry values in the specified range. Roughly ~75% of the registry values can be read this way, the other ~25% are read protected, the system reboots on an attempted read. There are 355 read protected registers and 293 of those appear to belong to the CVD2.  
 
 
 
@@ -76,7 +78,7 @@ Association of Broadcasters (NAB) tested a group of similar boxes back in 2008. 
 
 ## PORTS:
 
-There are through holes for a 4 pin header which I used for console access. A 7 pin header near the edge of the board and a 6 pin next to the processor which I assume is an EJTAG port. There is a 'smart antenna' port in the back, the standard for these is CEA-909-A. The port is capable of bidirectional communication. The box also supports Analog RF Passthrough so you could pipe an antenna through the box and out again to an RTL or other SDR. The IR blaster connects to the main board using 4 pins of a 6 pin header on the same edge as the 7-pin and 4-pin. 
+There are through holes for a 4 pin header which I used for console access. A 7 pin header near the edge of the board and a 6 pin next to the processor which I'm assuming is an EJTAG port. There is a 'smart antenna' port in the back, the standard for these is CEA-909-A. The port is capable of bidirectional communication. The box also supports Analog RF Passthrough so you could pipe an antenna through the box and out again to an RTL or other SDR. The IR blaster connects to the main board using 4 pins of a 6 pin header on the same edge as the 7-pin and 4-pin. 
 
 
 
