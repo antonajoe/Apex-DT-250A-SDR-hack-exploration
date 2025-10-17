@@ -165,3 +165,87 @@ https://osmocom.org/projects/rtl-sdr/wiki
 Ebay Search for hardware:
 
 https://www.ebay.com/sch/i.html?_nkw=apex+dt250a&_sacat=0
+
+
+## UPDATES (as of 10/17/2025)
+
+These are some other things I've learned or tried since starting the project:
+
+There is now a much more detailed hardware datasheet for the SupraHD 748 in the datasheets folder.
+
+I mistook 16Mb to mean 16MB... so the flashchip has only 2 MegaBytes of space, this is a setback for this project.
+However, I am still interested in minimally getting a U-Boot console with UART access working.
+Also, the 748 datasheet claims that it has flashchip compatibility up to !28Mb = 16MB, so I am going to try to replace the flashchip
+with a larger one once I have a bootloader that works on the 2MB Spansion chip. The 748 also allows booting from UART, 
+and the 'config' printout mentions SD Card booting. Worth exploring still I think.
+
+I believe the 7-pin through hole connection to be for an LCD display connection. It looks like it is not fully implemented on the PCB but might be able to be.
+
+The bin file read from flash has entropy that varies around 0.9, The following was found using Strings:
+
+'''
+Copyrigh
+t (c) 19
+96-2003 
+Express 
+Logic In
+c. * Thr
+eadX MIP
+S32_4Kx/
+Green Hi
+lls Vers
+ion G4.0
+-GB-GL-M
+-D-DL-KM
+L-CMR-Hj
+ML2-GZ-K
+C-NH-TD-
+AP-HA-GF
+MS-DW-US
+A-CA-SD
+'''
+
+MIPS CPU appears to be 4kx
+
+Apparently Green Hills is a an embedded technology company. Here is a link:
+
+https://www.ghs.com/
+
+## Next Steps: Buildroot/OpenWRT/U-BOOT
+
+I have learned to use Buildroot and OpenWRT's buildroot based build system well enough to create a basic image for RPI 0w that boots to a BusyBox terminal. 
+Given that the CPU is MIPS 32 4kx I Used OpenWRT's build system to generate an image for the old Linksys WRT54g, flashed it to a 16MB Winbond chip and replaced
+the Spansion chip on one of the 250a's. This did not work, could not get a UART terminal, and the machine is still unusable after re-flashing the original bin
+read from flash. I have tested that the bin can be re-flashed after erasing the Spansion chip and it works.
+
+So, currently I'm learning about U-Boot and trying to get a better understanding of the boot process in general. 
+
+Questions I have include:
+
+Flashing the original bin to a new and larger chip did not work, why? Is the chip incompatible? 
+
+Flashprog/flashrom gave me an error that the image I was flashing is smaller than the chip's size to try and get around this I used 
+
+'''
+dd if=/dev/zero of=padding.bin bs=1 count= chipsize-imagesize [seek]
+'''
+
+and then
+
+'''
+cat apex.bin padding.bin >> apex_padded.bin
+'''
+
+and flashed padded.bin
+
+After a struggle, the chip took the flash, but the machine did not function and no terminal output. I might repeat this with
+a fresh flashclip, chip, and machine. But, I want to know more about this part before I do. I'm wondering if this failure simply means that
+the chip is incompatible, ANY 16MB chip is incompatible, or if there is something else I am missing or doing wrong. Is the method I used for
+padding the image correct?
+
+I used Buildroot to make just a basic u-boot.bin for RPI 0w but could not get a terminal that way. It only works when the Linux kernel
+is included, I'm trying to understand why that is and/or can U-Boot itself supply a basic console?
+
+MIPS support in Buildroot and U-Boot seems lacking or at least highly board specific. I'm learning to compile U-Boot and want to understand
+how to make a minimal configuration that would be small enough to fit in 2MB and also allow UART console access. I think I have enough 
+info on the hardware to create a device tree spec, but I need to know more about what I actually have I think. 
