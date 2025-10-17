@@ -183,7 +183,7 @@ I believe the 7-pin through hole connection to be for an LCD display connection.
 
 The bin file read from flash has entropy that varies around 0.9, The following was found using Strings:
 
-'''
+```
 Copyrigh
 t (c) 19
 96-2003 
@@ -203,7 +203,7 @@ C-NH-TD-
 AP-HA-GF
 MS-DW-US
 A-CA-SD
-'''
+```
 
 MIPS CPU appears to be 4kx
 
@@ -226,15 +226,15 @@ Flashing the original bin to a new and larger chip did not work, why? Is the chi
 
 Flashprog/flashrom gave me an error that the image I was flashing is smaller than the chip's size to try and get around this I used 
 
-'''
+```
 dd if=/dev/zero of=padding.bin bs=1 count= chipsize-imagesize [seek]
-'''
+```
 
 and then
 
-'''
+```
 cat apex.bin padding.bin >> apex_padded.bin
-'''
+```
 
 and flashed padded.bin
 
