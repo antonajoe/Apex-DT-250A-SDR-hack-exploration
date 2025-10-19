@@ -175,6 +175,8 @@ There is now a much more detailed hardware datasheet for the SupraHD 748 in the 
 
 Photos of the 250A board have been uploaded to the images folder.
 
+Memory dumping via terminal only occurs 256 bytes at a time, even scripted it would take a very long time to complete. 
+
 I mistook 16Mb to mean 16MB of flash and 256Mb of RAM to mean 256MB... so the flashchip has only 2 MegaBytes of space, and RAM 32 MegaBytes. This is a setback for this project.
 However, I am still interested in at least getting a U-Boot console with UART access working.
 Also, the 748 datasheet claims that it has flashchip compatibility up to 128Mb = 16MB, so I am going to try to replace the flashchip
