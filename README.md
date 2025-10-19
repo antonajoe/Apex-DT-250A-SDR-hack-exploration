@@ -52,7 +52,7 @@ The 250 board has a Samsung K4H561638H-UCCC chip. There is a datasheet in 'datas
 
 The 250A board has a Hynix HY5DU561622FTP-5.
 
-Both chips are 256mb
+Both chips are 256Mb
 
 ## OS:
 
@@ -173,15 +173,15 @@ These are some other things I've learned or tried since starting the project:
 
 There is now a much more detailed hardware datasheet for the SupraHD 748 in the datasheets folder.
 
-I mistook 16Mb to mean 16MB... so the flashchip has only 2 MegaBytes of space, this is a setback for this project.
-However, I am still interested in minimally getting a U-Boot console with UART access working.
+I mistook 16Mb to mean 16MB of flash and 256Mb of RAM to mean 256MB... so the flashchip has only 2 MegaBytes of space, and RAM 32 MegaBytes. This is a setback for this project.
+However, I am still interested in at least getting a U-Boot console with UART access working.
 Also, the 748 datasheet claims that it has flashchip compatibility up to !28Mb = 16MB, so I am going to try to replace the flashchip
 with a larger one once I have a bootloader that works on the 2MB Spansion chip. The 748 also allows booting from UART, 
 and the 'config' printout mentions SD Card booting. Worth exploring still I think.
 
 I believe the 7-pin through hole connection to be for an LCD display connection. It looks like it is not fully implemented on the PCB but might be able to be.
 
-The bin file read from flash has entropy that varies around 0.9, The following was found using Strings:
+The bin file read from flash has entropy that varies/peaks around 0.9 and lower, The following was found using Strings:
 
 ```
 Copyrigh
