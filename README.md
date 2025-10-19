@@ -173,6 +173,8 @@ These are some other things I've learned or tried since starting the project:
 
 There is now a much more detailed hardware datasheet for the SupraHD 748 in the datasheets folder.
 
+Photos of the 250A board have been uploaded to the images folder.
+
 I mistook 16Mb to mean 16MB of flash and 256Mb of RAM to mean 256MB... so the flashchip has only 2 MegaBytes of space, and RAM 32 MegaBytes. This is a setback for this project.
 However, I am still interested in at least getting a U-Boot console with UART access working.
 Also, the 748 datasheet claims that it has flashchip compatibility up to 128Mb = 16MB, so I am going to try to replace the flashchip
@@ -243,9 +245,9 @@ a fresh flashclip, chip, and machine. But, I want to know more about this part b
 the chip is incompatible, ANY 16MB chip is incompatible, or if there is something else I am missing or doing wrong. Is the method I used for
 padding the image correct?
 
-I used Buildroot to make just a basic u-boot.bin for RPI 0w but could not get a terminal that way. It only works when the Linux kernel
+I used Buildroot to make just a basic u-boot.bin for RPI 0w but could not get a terminal that way. It only works when the Linux kernel/SD Card image
 is included, I'm trying to understand why that is and/or can U-Boot itself supply a basic console?
 
 MIPS support in Buildroot and U-Boot seems lacking or at least highly board specific. I'm learning to compile U-Boot and want to understand
-how to make a minimal configuration that would be small enough to fit in 2MB and also allow UART console access. I think I have enough 
-info on the hardware to create a device tree spec, but I need to know more about what I actually have I think. 
+how to make a minimal configuration that would be small enough to fit in 2MB and also allow UART console access. I think there is enough 
+info on the hardware to create a device tree spec, but not sure at this point.
