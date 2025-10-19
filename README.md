@@ -175,7 +175,7 @@ There is now a much more detailed hardware datasheet for the SupraHD 748 in the 
 
 I mistook 16Mb to mean 16MB of flash and 256Mb of RAM to mean 256MB... so the flashchip has only 2 MegaBytes of space, and RAM 32 MegaBytes. This is a setback for this project.
 However, I am still interested in at least getting a U-Boot console with UART access working.
-Also, the 748 datasheet claims that it has flashchip compatibility up to !28Mb = 16MB, so I am going to try to replace the flashchip
+Also, the 748 datasheet claims that it has flashchip compatibility up to 128Mb = 16MB, so I am going to try to replace the flashchip
 with a larger one once I have a bootloader that works on the 2MB Spansion chip. The 748 also allows booting from UART, 
 and the 'config' printout mentions SD Card booting. Worth exploring still I think.
 
