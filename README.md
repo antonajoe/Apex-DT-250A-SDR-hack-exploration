@@ -264,6 +264,7 @@ It was suggested in this helpful and friendly Reddit forum https://www.reddit.co
 
 <img width="461" height="421" alt="swd_uart_ejtag_test" src="https://github.com/user-attachments/assets/c725b135-36a6-40ea-8729-089c333662fb" />
 
+
 Another concern I've begun to understand is that board's can implement security measures in the boot process. For example, if a firmware is signed with an encryption key in OTP memory than some other unsigned firmware may not load. I'm just starting to learn about the various ways this type of security can be implemented but it was easily available to the basic following check:
 
 I had previously tested that the flashchip could be read, erased, and reflashed resultng in the device working properly still. So I wondered what would happen if I modified a random bit in the firmware .bin file and flashed that. I tried this twice, modifying bits at two different locations in the file. In one instance doing so soft bricked the device, in the other it did not. I suspect this does not confirm the lack of cryptographic security measures, but it does not suggest ending the project on account of them either. I think it plausible that since only some portions of the .bin appear encryoted the system will only brick if modifying those portions. I'll try repeating the tests with respect to areas in the .bin with high and low entropy according to the binwalk output and see if this determines whether or not the device functions. Maybe the crypto sec only checks parts of the flash?   
